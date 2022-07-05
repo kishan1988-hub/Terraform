@@ -6,7 +6,7 @@ resource aws_instance "myec2" {
 }
 
 resource aws_eip "myec2_lb" {
-  instance = aws_instance.myec2
+  instance = aws_instance.myec2.id
   vpc = true
 }
 
@@ -14,6 +14,7 @@ resource aws_security_group "myec2_tls" {
 
   name = "mk-sec-group"
 
+ingress
 {
   from_port = 443
   to_port = 443
