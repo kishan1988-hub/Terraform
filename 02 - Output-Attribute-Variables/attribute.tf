@@ -3,8 +3,9 @@
 
 resource aws_instance "local_ec2" {
   instance_type = "t2.micro"  # attribute of the terraform object aws_instance
-  tags {
-     = "attribute-output-handling"
+  ami = "ami-0a9d27a9f4f5c0efc"
+  tags= {
+    Name = "attribute-output-handling"
   }
 }
 

@@ -14,8 +14,7 @@ resource aws_security_group "myec2_tls" {
 
   name = "mk-sec-group"
 
-ingress
-{
+ingress{
   from_port = 443
   to_port = 443
   protocol = "tcp"

@@ -2,7 +2,7 @@
 
 resource "aws_elb" "mk-elb" {
   name = var.elb_name
-  availability_zone = var.az
+  availability_zones = var.az
   listener {
     instance_port = 8000
     instance_protocol = "http"
@@ -20,7 +20,7 @@ resource "aws_elb" "mk-elb" {
   idle_timeout = var.timeout
   connection_draining = true
   connection_draining_timeout = var.timeout
-  tage = {
+  tags = {
     name = "mk-terraform-elb"
   }
 }
