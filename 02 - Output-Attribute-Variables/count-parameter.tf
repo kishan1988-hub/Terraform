@@ -9,6 +9,11 @@ resource "aws_iam_user" "lb_user" {
     path = "/system/"
 }
 
+resource "aws_iam_user" "lb_user" {
+    name = lbuser
+    count = 3
+    path = "/system/"
+}
 
 resource "aws_instance" "Dev" {
   ami             = "ami-0a9d27a9f4f5c0efc"
