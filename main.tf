@@ -1,3 +1,4 @@
+/*
 resource "aws_s3_bucket" "tf_state_s3" {
   #make sure you give unique bucket name
   bucket        = "mg-terraform-state"
@@ -27,3 +28,4 @@ resource "aws_dynamodb_table" "terraform_locks" {
     type = "S"
   }
 }
+*/

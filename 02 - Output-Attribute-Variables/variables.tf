@@ -10,3 +10,7 @@ variable "az" {
 variable "timeout" {
   type = number
 }
+
+variable "istest" {
+
+}

@@ -5,3 +5,4 @@
 elb_name = "mk-elb"
 timeout = "250"
 az = ["ap-south-1","us-west-1a"]
+istest = false

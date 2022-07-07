@@ -12,12 +12,19 @@ provider "aws" {
   region  = "ap-south-1"
 }
 
-resource "aws_instance" "aws-Prep" {
+resource "aws_instance" "Dev" {
   ami             = "ami-0a9d27a9f4f5c0efc"
   instance_type   = "t2.micro"
   key_name        = "dropmailtokishan" # this is the pem file name associated with the server
   security_groups = ["launch-wizard-1"]
-  tags = {
-    Name = "Terraform Created server"
-  }
+  count = var.istest == true ? 3 : 0
+}
+
+
+resource "aws_instance" "UAT" {
+  ami             = "ami-0a9d27a9f4f5c0efc"
+  instance_type   = "t2.medium"
+  key_name        = "dropmailtokishan" # this is the pem file name associated with the server
+  security_groups = ["launch-wizard-1"]
+  count = var.istest == false ? 1 : 0
 }
