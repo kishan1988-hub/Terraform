@@ -1,10 +1,10 @@
 variable "elb_name" {
   default = "Elastic-LB-MK"
-  type = string
+  type    = string
 }
 
 variable "az" {
-  type = list
+  type = list(any)
 }
 
 variable "timeout" {

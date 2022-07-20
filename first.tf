@@ -17,7 +17,7 @@ resource "aws_instance" "Dev" {
   instance_type   = "t2.micro"
   key_name        = "dropmailtokishan" # this is the pem file name associated with the server
   security_groups = ["launch-wizard-1"]
-  count = var.istest == true ? 3 : 0
+  count           = var.istest == true ? 1 : 0
 }
 
 
@@ -26,5 +26,5 @@ resource "aws_instance" "UAT" {
   instance_type   = "t2.medium"
   key_name        = "dropmailtokishan" # this is the pem file name associated with the server
   security_groups = ["launch-wizard-1"]
-  count = var.istest == false ? 1 : 0
+  count           = var.istest == false ? 1 : 0
 }
